@@ -21,7 +21,7 @@ fn main(){
     }
 
     let mut value: String = String::new();
-    let mut degree_value: f64;
+    let degree_value: f64;
 
     loop {
         println!("Enter value for {}: ", &input);
