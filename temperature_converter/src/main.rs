@@ -11,6 +11,7 @@ fn main(){
             .expect("Failed to read input.");
         
         if input.trim() != "F" && input.trim() != "C" {
+            input.clear();
             continue;
         }
         else {
@@ -23,7 +24,7 @@ fn main(){
     let mut degree_value: f64;
 
     loop {
-        println!("Enter value for {input}: ");
+        println!("Enter value for {}: ", &input);
 
         io::stdin()
             .read_line(&mut value)
@@ -33,7 +34,10 @@ fn main(){
             .trim()
             .parse(){
                 Ok(num) => num,
-                Err(_) => continue, 
+                Err(_) => {
+                    value.clear();
+                    continue;
+                } 
             };
         break;
     }
