@@ -1,13 +1,34 @@
 fn main() {
-    let mut number = 10;
     
-    while number != 0 {
-        println!("number: {number}");
-        number -= 1;
+    for number in (1..4).rev() {
+        println!("{number}!");
     }
 
     println!("LIFTOFF!!!");
 }
+
+
+
+// fn main() {
+//     let a = [10, 20, 30, 40, 50];
+
+//     for element in a {
+//         println!("The value of element is: {element}");
+//     }
+// }
+
+
+
+// fn main() {
+//     let mut number = 10;
+    
+//     while number != 0 {
+//         println!("number: {number}");
+//         number -= 1;
+//     }
+
+//     println!("LIFTOFF!!!");
+// }
 
 
 
