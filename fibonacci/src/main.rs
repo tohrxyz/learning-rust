@@ -9,13 +9,21 @@ fn main() {
     let num: u64 = args[1].parse().expect("Not a number.");
 
     for i in 0..num {
+
+        let current_time = Instant::now();
         
         println!("{} steps: {}", fibonacci(i), i);
+        
+        let current_end_time = Instant::now();
+        let duration = current_end_time - current_time;
+        
+        println!("In between time: {:?}", duration);
+        println!("");
     }
 
     let end_time = Instant::now();
     let duration = end_time - start_time;
-    
+
     println!("Time taken: {:?}", duration);
 }
 
