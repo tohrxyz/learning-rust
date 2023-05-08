@@ -1,5 +1,5 @@
 [package]
-name = "fibonacci_nonRecursive"
+name = "fibonacci_non_recursive"
 version = "0.1.0"
 edition = "2021"
 
