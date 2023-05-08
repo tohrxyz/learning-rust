@@ -9,19 +9,14 @@ fn main() {
     println!("{}", done_string);
 }
 
-fn return_first_word(string: &String) -> String {
-  let string = string.clone();
-  let mut string_return = String::new();
-  
-  for i in 0..string.len() {
-    let ch = string.chars().nth(i).unwrap();
+fn return_first_word(string: &String) -> &str {
+  let bytes = string.as_bytes();
 
-    if ch != ' ' {
-      string_return.push(ch);
-    } else {
-      break;
+  for(i, &item) in bytes.iter().enumerate() {
+    if item == b' ' {
+      return &string[0..i];
     }
   }
 
-  string_return
+  &string[..]
 }
