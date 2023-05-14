@@ -6,7 +6,7 @@ async fn main() {
 
     println!("[Logging into PostgreSQL server]");
     let username = input("Enter username: ").unwrap();
-    let password = input("Enter password: ").unwrap();
+    let password = rpassword::read_password_from_tty(Some("Enter password: ")).unwrap();
     let db_name = input("Enter db name: ").unwrap();
 
     let login_credentials = format!("host=localhost user={} password={} dbname={}", &username, &password, &db_name);
