@@ -9,25 +9,31 @@ impl Rectangle {
         self.width * self.height
     }
     fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
+        self.width > other.width && self.height > other.height 
     }
 }
 
 fn main() {
     let rect1 = Rectangle {
-        width: 30,
-        height: 50,
-    };
-    let rect2 = Rectangle {
         width: 40,
-        height: 50,
-    };
-    let rect3 = Rectangle {
-        width: 20,
         height: 60,
     };
+    let rect2 = Rectangle {
+        width: 50,
+        height: 60,
+    };
+    let rect3 = Rectangle {
+        width: 25,
+        height: 40,
+    };
 
-    println!("Rect1 can hold rect2 -> {}", rect1.can_hold(&rect2));
-    println!("Rect1 can hold rect3 -> {}", rect1.can_hold(&rect3));
-    // println!("Area of rectangle is {} square px.", rect1.area());
+    println!(
+        "rect1 can hold rect2 -> {}",
+        rect1.can_hold(&rect2)
+    );
+    println!(
+        "rect1 can hold rect3 -> {}",
+        rect1.can_hold(&rect3)
+    );
+
 }
