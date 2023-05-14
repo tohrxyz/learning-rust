@@ -14,9 +14,15 @@ async fn main() {
         }
     });
 
-    // Now we can execute a simple SQL query. For example, to get the server version:
-    let row = client.query_one("SELECT version()", &[]).await.unwrap();
-    let version: &str = row.get(0);
-    
-    println!("Server version: {}", version);
+    // Create table
+    client.execute(
+        "CREATE TABLE users (
+            id SERIAL PRIMARY KEY,
+            name VARCHAR NOT NULL,
+            email VARCHAR NOT NULL UNIQUE
+        )",
+        &[],
+    ).await.unwrap();
+
+    println!("Table users created");
 }
